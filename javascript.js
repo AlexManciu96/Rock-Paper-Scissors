@@ -17,7 +17,9 @@ function getComputerChoice() {
  function getPlayerChoice() {
     let playerChoice = prompt("Please write in the box below either Rock, Paper or Scissors").toLowerCase();
     return playerChoice;
-} 
+ }  
+
+
 
 let playerScore = 0;
 let computerScore = 0;
@@ -74,6 +76,9 @@ function game() {
         console.log("You lost! Try again.");
         alert("You lost! Try again.");
     }
+    playerScore = 0;
+    computerScore = 0;
+    game();
 }
 
 game();
