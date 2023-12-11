@@ -16,7 +16,17 @@ function getComputerChoice() {
 
  function getPlayerChoice() {
     let playerChoice = prompt("Please write in the box below either Rock, Paper or Scissors").toLowerCase();
+    if (playerChoice == "rock"){
+        return playerChoice;
+    }
+    else if(playerChoice == "paper"){
+        return playerChoice;
+    }
+    else if(playerChoice == "scissors")
     return playerChoice;
+    else{
+        return alert("The answer you have written is not valid! Please write either Rock, Paper or Scissors");
+    }
  }  
 
 
@@ -65,6 +75,13 @@ function game() {
     for (let i = 0; i < 5; i++) {
         let computerSelection = getComputerChoice();
         let playerSelection =  getPlayerChoice();
+        if (!["rock", "paper", "scissors"].includes(playerSelection)){
+            i--;
+            console.log("Wrong input");
+        }
+        if (playerSelection == computerSelection){
+            i--;
+        }
         playRound(playerSelection, computerSelection);
         console.log("Player score is: " + playerScore + " and" + " Computer Score is " + computerScore + " and i is " + i);
     }
